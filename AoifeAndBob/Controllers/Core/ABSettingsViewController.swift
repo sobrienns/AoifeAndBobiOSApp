@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Controller to to show and search for settings
 final class ABSettingsViewController: UIViewController {
 
     override func viewDidLoad() {

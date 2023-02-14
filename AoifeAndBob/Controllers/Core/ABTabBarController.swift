@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Controller to house root tab controllers
 final class ABTabBarController: UITabBarController {
 
     override func viewDidLoad() {

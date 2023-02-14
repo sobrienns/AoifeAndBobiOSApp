@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Controller to to show and search for charters
 final class ABCharacterViewController: UIViewController {
 
     override func viewDidLoad() {
