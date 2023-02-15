@@ -21,6 +21,4 @@ final class ABCharacterViewController: UIViewController {
     }
     
 
-    
-
 }
