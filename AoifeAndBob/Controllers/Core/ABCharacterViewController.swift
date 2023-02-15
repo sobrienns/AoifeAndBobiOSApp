@@ -18,6 +18,22 @@ final class ABCharacterViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
         title = "Characters"
+        
+        let request = ABRequest(
+            endpoint: .character,
+            //pathComponents: ["1"]
+            queryParameters: [
+                URLQueryItem(name: "name", value: "rick"),
+                URLQueryItem(name: "status", value: "alive")
+            ]
+        )
+        print(request.url)
+        
+        ABService.shared.execute(request,
+                                 expecting: ABCharacter.self)
+        {
+                result in 
+        }
     }
     
 

@@ -9,7 +9,7 @@ import Foundation
 
 /// Respresents a unique API endpoint
 @frozen enum ABEndpoint: String {
-    case charter
+    case character
     case location
     case episode
 }

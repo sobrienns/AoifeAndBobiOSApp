@@ -20,8 +20,12 @@ final class ABService {
     /// Send Rick and Morty API call
     ///  - Paramaters
     ///         - request: Request Instance
+    ///         - Type: Type of object we expect
     ///         - compleation: Callback with data or error
-    public func execute(_ request: ABRequest, compleation: @escaping () -> Void){
+    public func execute<T: Codable>(_ request: ABRequest,
+                                    expecting type: T.Type,
+                                    compleation: @escaping (Result<T, Error>) -> Void)
+    {
         
     }
 }
