@@ -19,7 +19,7 @@ struct ABCharacter: Codable {
       let image: String
       let episode: [String]
       let url: [String]
-      let created: String
+      let created: String   
 }
 
 

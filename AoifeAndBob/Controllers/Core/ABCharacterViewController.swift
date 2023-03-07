@@ -10,6 +10,8 @@ import UIKit
 /// Controller to to show and search for charters
 final class ABCharacterViewController: UIViewController {
 
+    private let characterListView = ABCharacterListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,16 @@ final class ABCharacterViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Characters"
         
+        view.addSubview(characterListView)
+        NSLayoutConstraint.activate([
+            
+            characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+        /*
         let request = ABRequest(
             endpoint: .character,
             //pathComponents: ["1"]
@@ -30,10 +42,14 @@ final class ABCharacterViewController: UIViewController {
         print(request.url)
         
         ABService.shared.execute(request,
-                                 expecting: ABCharacter.self)
-        {
-                result in 
-        }
+                                 expecting: ABCharacter.self){result in
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }*/
     }
     
 

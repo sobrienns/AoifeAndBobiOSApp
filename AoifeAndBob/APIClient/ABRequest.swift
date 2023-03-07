@@ -21,7 +21,7 @@ final class ABRequest {
     
     private let endpoint: ABEndpoint
     
-    private let pathComponents: Set<String>
+    private let pathComponents: [String]
     
     private let queryParameters: [URLQueryItem]
     
@@ -48,6 +48,7 @@ final class ABRequest {
             string += argumentString
             
         }
+        print("URL: "+string)
         return string
     }
     
@@ -58,7 +59,7 @@ final class ABRequest {
     public let httpMethod = "GET"
     // MARK: - Public
     public init(endpoint: ABEndpoint,
-                pathComponents: Set<String> = [],
+                pathComponents: [String] = [],
                 queryParameters: [URLQueryItem] = [])
     {
         self.endpoint = endpoint
@@ -66,4 +67,8 @@ final class ABRequest {
         self.queryParameters = queryParameters
     }
     
+}
+
+extension ABRequest {
+    static let listCharacterRequest = ABRequest(endpoint: .character)
 }
